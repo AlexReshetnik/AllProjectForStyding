@@ -65,12 +65,12 @@ html,body{
 }
 h5{ 
      position: absolute;
-    font-size: 50px;
+    font-size: 100%;
    background-color:  rgba(0, 0, 0, 0.678);
    color: rgb(255, 255, 255);
    padding: 10px;
    border-radius: 10px;
-   top:50px;
+   top:5%;
     justify-content: center;
      text-align: center;
 }
