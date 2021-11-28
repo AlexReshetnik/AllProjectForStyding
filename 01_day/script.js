@@ -1,4 +1,4 @@
-var imgs = document.querySelectorAll(".img");
+var imgs = document.querySelectorAll(".slide");
 
 for (const im of imgs) {
     im.addEventListener('click', () => {
