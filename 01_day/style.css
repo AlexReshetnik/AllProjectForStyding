@@ -74,3 +74,19 @@ h5{
     justify-content: center;
      text-align: center;
 }
+@media (max-device-width:480px){
+    .Gallery{
+    width: 90%;
+    display: flex;
+    height: 20vh;
+    margin: 0  5vw;
+    justify-content: center;
+    text-align: center;
+}
+
+.active{
+    width: 60%;
+    z-index: 2;
+}
+
+}
