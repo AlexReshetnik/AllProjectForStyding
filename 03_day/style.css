@@ -23,7 +23,7 @@ html,body{
 height: 100%;
 width: 200%;
 object-fit: cover;
-transition: transform 0.5s ease-in;
+
 
 }
 .rightbloc img{
@@ -34,7 +34,7 @@ width: 200%;
  object-fit: cover;
 
  
-transition: transform 0.5s ease-in;
+
 
 }
 img{
@@ -52,7 +52,7 @@ button{
 }
 button:hover>i{
     opacity: 0.5;
-  
+
 }
 button:hover{
   border: 2px solid rgb(56, 56, 56);
