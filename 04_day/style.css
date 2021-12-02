@@ -1,0 +1,24 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+background-color: rgb(27, 27, 27);
+}
+#board{
+    line-height: 0;
+    display:inline-table;
+    align-items: center;
+    justify-content: center;
+}
+.cube{
+    display: inline-table;
+    flex-wrap: wrap;
+    margin: 1px;
+    background-color: rgb(63, 63, 63);
+  transition: all 0.2s ease-in;
+  color:rgb(255, 0, 157);
+}
