@@ -2,7 +2,7 @@ const HEIGHTc = 30;
 const WIDTHc = 30;
 const WIDTHcube = 20;
 var board = document.querySelector("#board");
-board.style.width = HEIGHTc * (WIDTHcube+())+"px";
+board.style.width = HEIGHTc * (WIDTHcube+(4))+"px";
 for (let i = 0; i < HEIGHTc * WIDTHc; i++) {
     const cubes = document.createElement("div");
     cubes.classList.add("cube")
