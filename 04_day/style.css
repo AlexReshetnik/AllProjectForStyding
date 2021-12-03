@@ -17,8 +17,10 @@ background-color: rgb(27, 27, 27);
 .cube{
     display: inline-table;
     flex-wrap: wrap;
-    margin: 1px;
+    margin: 2px;
     background-color: rgb(63, 63, 63);
   transition: all 0.2s ease-in;
   color:rgb(255, 0, 157);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  border-radius: 2x;
 }
