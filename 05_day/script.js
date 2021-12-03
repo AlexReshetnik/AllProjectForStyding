@@ -17,12 +17,14 @@ function changetime() {
     if (tim == 0) { finishGame(); return }
     timer.innerHTML = tim < 10 ? `Remains 00:0${tim--}` : `Remains 00:${tim--}`;
 }
-var circle
+var circle;
+var colors = ["red", "rgb(0, 255, 0)", "blue", "blueviolet", "cyan", "deeppink", "rgb(255, 0, 157)"];
+
 function game() {
     circle = document.createElement("div");
     circle.classList.add("circle");
     
-    
+    circle.style.backgroundColor = colors[score % colors.length];
     circle.style.transform = `translate(${getRandom(20, 480)}px,${getRandom(20, 480)}px)`
     circle.style.width=circle.style.height = `${getRandom(5, 30)}px`
     circle.addEventListener('click', clickCircle);
