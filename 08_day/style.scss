@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    #fon {
+        display: grid;
+
+        width: 500px;
+        height: 500px;
+        &::before {
+            content: "";
+
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle at 50% 0, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0) 70.71%),
+                radial-gradient(circle at 6.7% 75%, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 70.71%),
+                radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 70.71%) beige;
+            border-radius: 50%;
+        }
+        .calendar {
+            position: absolute;
+            align-self: center;
+            justify-self: center;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+           
+            
+            .days,.numberc {
+                  display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                     transition: all 1s linear ;
+                div {
+                    aspect-ratio: 1 / 1;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.294);
+                    border-radius: 5px;
+                    margin: 2px;
+                    
+                }
+            }
+            .numberc{
+                height: 300px;
+               overflow: auto ;
+              
+               &::-webkit-scrollbar{
+                   
+               }
+            }
+        }
+    }
+}
