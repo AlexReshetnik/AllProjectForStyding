@@ -1,1 +1,65 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+body #fon {
+  display: -ms-grid;
+  display: grid;
+  width: 500px;
+  height: 500px;
+}
+
+body #fon::before {
+  content: "";
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at 50% 0, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0) 70.71%), radial-gradient(circle at 6.7% 75%, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 70.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 70.71%) beige;
+  border-radius: 50%;
+}
+
+body #fon .calendar {
+  position: absolute;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+body #fon .calendar .days, body #fon .calendar .numberc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+}
+
+body #fon .calendar .days div, body #fon .calendar .numberc div {
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.294);
+  border-radius: 5px;
+  margin: 2px;
+}
+
+body #fon .calendar .numberc {
+  height: 300px;
+  overflow: auto;
+}
+/*# sourceMappingURL=style.css.map */
