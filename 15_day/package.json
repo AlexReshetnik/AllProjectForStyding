@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+  
+}

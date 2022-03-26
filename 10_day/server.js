@@ -86,5 +86,5 @@ function BD() {
 
 /*"dev": "nodemon server.js",*/
 
-app.listen(3000, () => { console.log("Сервер запущений"); });
+app.listen(3000, "192.168.0.193", () => { console.log("Сервер запущений"); });
 module.exports.app = app;
