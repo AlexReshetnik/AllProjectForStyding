@@ -28,12 +28,15 @@ document.addEventListener('mousedown', (e) => {
         for (let i = 0; i < objP.length; i++) {
             if (checPoss(objP[i], { x: e.pageX, y: e.pageY })) {
                 mousemove = { i: i, x: e.pageX, y: e.pageY }
+              
             }
         }
     }
 })
 document.addEventListener('mousemove', (e) => {
+ 
     if (mousemove) {
+       
         drow(objP[mousemove.i], 5, "rgba(255, 255, 255, 1)")
         for (let l = 0; l < objP[mousemove.i].ar.length; l++) {
             objP[mousemove.i].ar[l].x -= mousemove.x - e.pageX
@@ -89,8 +92,11 @@ function collisions(index) {
     }return false;
 }
 function checPoss(ob, point) { 
+    
     for (let i = 2; i < ob.ar.length; i++) {
+       
         if (square(ob.ar[0], ob.ar[i - 1], ob.ar[i], point)) { 
+           
             return true;
         }      
     }return false;
@@ -104,8 +110,8 @@ function pl(a, b, c) {
     var acl = len(a, c)
     var bcl = len(b, c)
     var p = (abl + acl + bcl) / 2 
-    return (p * (p - abl) * (p - acl) * (p - bcl))**0,5
+    return (p * (p - abl) * (p - acl) * (p - bcl))**0.5
 }
 function len(a, b) {
-    return ((a.x - b.x)**2 + (a.y - b.y)**2)**0,5
+    return ((a.x - b.x)**2 + (a.y - b.y)**2)**0.5
 }
