@@ -11,6 +11,7 @@ class Graph {
         if (this.map.indexOf(vertex2) == -1) { this.map.push(vertex2) }
     }
     methodKruskala() {
+        let LENGHT=0
         let ar = this.map.slice(0, this.map.length).map(i => [i])
         this.arrRibs.sort((a, b) => a.length - b.length)
         this.arrRibs.forEach(i => {
@@ -18,6 +19,9 @@ class Graph {
             ar.forEach((l, ll) => { if (l.indexOf(i.vertex1) != -1) { ia = ll } })
             ar.forEach((l, ll) => { if (l.indexOf(i.vertex2) != -1) { ib = ll } })
             if (ia != ib) {
+                LENGHT+= +i.TextLable.innerText
+                console.log(LENGHT);
+                document.querySelector("#TextCount").textContent=`Мінімальна необхідна довжина кабелю  ${LENGHT}`
                 drow(i.vertex1.left, i.vertex1.top, i.vertex2.left, i.vertex2.top, 'red', 3)
                 ar[ia] = ar[ia].concat(ar[ib])
                 ar[ib] = []
@@ -70,7 +74,7 @@ function createNode(e) {
 
                 isAltDown = false
                 let leng = prompt("Введіть довжину...", 0)
-                console.log(itemProcs);
+                //console.log(itemProcs);
                 let textLable = createTextLable(
                     focusNode.left - ((focusNode.left - itemProcs.left) / 2),
                     focusNode.top - ((focusNode.top - itemProcs.top) / 2), leng)
@@ -120,8 +124,8 @@ function drow(x1, y1, x2, y2, strokeS, lineW) {
     ctx.strokeStyle = strokeS;
     ctx.lineWidth = lineW;
     ctx.beginPath();
-    ctx.moveTo(x1 + 15, y1 + 10);
-    ctx.lineTo(x2 + 15, y2 + 10);
+    ctx.moveTo(x1 + 15, y1+10 );
+    ctx.lineTo(x2 + 15, y2+10 );
     ctx.closePath();
     ctx.stroke();
 }
