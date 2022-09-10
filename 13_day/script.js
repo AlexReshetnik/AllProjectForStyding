@@ -28,21 +28,21 @@ document.addEventListener('mousedown', (e) => {
         for (let i = 0; i < objP.length; i++) {
             if (checPoss(objP[i], { x: e.pageX, y: e.pageY })) {
                 mousemove = { i: i, x: e.pageX, y: e.pageY }
-              
+
             }
         }
     }
 })
 document.addEventListener('mousemove', (e) => {
- 
+
     if (mousemove) {
-       
+
         drow(objP[mousemove.i], 5, "rgba(255, 255, 255, 1)")
         for (let l = 0; l < objP[mousemove.i].ar.length; l++) {
             objP[mousemove.i].ar[l].x -= mousemove.x - e.pageX
             objP[mousemove.i].ar[l].y -= mousemove.y - e.pageY
         }
-        if (collisions(mousemove.i)) {        
+        if (collisions(mousemove.i)) {
             for (let l = 0; l < objP[mousemove.i].ar.length; l++) {
                 objP[mousemove.i].ar[l].x += mousemove.x - e.pageX
                 objP[mousemove.i].ar[l].y += mousemove.y - e.pageY
@@ -78,9 +78,9 @@ function drow(ob, lineW, strokeS) {
 }
 function collisions(index) {
     for (let i = 0; i < objP.length; i++) {
-        if (i == index) { continue } 
+        if (i == index) { continue }
         for (let l = 0; l < objP[index].ar.length; l++) {
-            if (checPoss(objP[i], objP[index].ar[l])) {           
+            if (checPoss(objP[i], objP[index].ar[l])) {
                 return true
             }
         }
@@ -88,18 +88,18 @@ function collisions(index) {
             if (checPoss(objP[index], objP[i].ar[l])) {
                 return true
             }
-        }    
-    }return false;
+        }
+    } return false;
 }
-function checPoss(ob, point) { 
-    
+function checPoss(ob, point) {
+
     for (let i = 2; i < ob.ar.length; i++) {
-       
-        if (square(ob.ar[0], ob.ar[i - 1], ob.ar[i], point)) { 
-           
+
+        if (square(ob.ar[0], ob.ar[i - 1], ob.ar[i], point)) {
+
             return true;
-        }      
-    }return false;
+        }
+    } return false;
 }
 function square(a, b, c, d) {
     var ad = pl(a, b, c) - (pl(a, b, d) + pl(a, d, c) + pl(d, b, c))
@@ -109,9 +109,9 @@ function pl(a, b, c) {
     var abl = len(a, b)
     var acl = len(a, c)
     var bcl = len(b, c)
-    var p = (abl + acl + bcl) / 2 
-    return (p * (p - abl) * (p - acl) * (p - bcl))**0.5
+    var p = (abl + acl + bcl) / 2
+    return (p * (p - abl) * (p - acl) * (p - bcl)) ** 0.5
 }
 function len(a, b) {
-    return ((a.x - b.x)**2 + (a.y - b.y)**2)**0.5
+    return ((a.x - b.x) ** 2 + (a.y - b.y) ** 2) ** 0.5
 }
